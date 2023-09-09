@@ -1,0 +1,309 @@
+[package]
+name = "Kari-lang"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+  "compiler/ast",
+  "compiler/compiler",
+  "compiler/parser",
+  "compiler/passes",
+  "compiler/span",
+  "errors",
+  "kari/package"
+]
+
+[workspace.dependencies.snarkvm]
+version = "=0.11.6"
+
+[workspace.dependencies.snarkvm-console]
+version = "=0.11.6"
+
+[lib]
+path = "kari/lib.rs"
+
+[[bin]]
+name = "kari"
+path = "kari/main.rs"
+
+[features]
+default = [ ]
+ci_skip = [ "leo-compiler/ci_skip" ]
+noconfig = [ ]
+
+[dependencies.leo-ast]
+path = "./compiler/ast"
+version = "1.7.2"
+
+[dependencies.leo-compiler]
+path = "./compiler/compiler"
+version = "1.7.2"
+
+[dependencies.leo-errors]
+path = "./errors"
+version = "1.7.2"
+
+[dependencies.leo-package]
+path = "./kari/package"
+version = "1.7.2"
+
+[dependencies.leo-parser]
+path = "./compiler/parser"
+version = "1.7.2"
+
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[workspace]
+members = [
+  "compiler/ast",
+  "compiler/compiler",
+  "compiler/parser",
+  "compiler/passes",
+  "compiler/span",
+  "docs/grammar",
+  "errors",
+  "kari/package"
+]
+
+[workspace.dependencies.snarkvm]
+version = "=0.11.6"
+
+[workspace.dependencies.snarkvm-console]
+version = "=0.11.6"
+
+[lib]
+path = "kari/lib.rs"
+
+[[bin]]
+name = "kari"
+path = "kari/main.rs"
+
+[features]
+default = [ ]
+ci_skip = [ "leo-compiler/ci_skip" ]
+noconfig = [ ]
+
+[dependencies.leo-ast]
+path = "./compiler/ast"
+version = "1.7.2"
+
+[dependencies.leo-compiler]
+path = "./compiler/compiler"
+version = "1.7.2"
+
+[dependencies.leo-errors]
+path = "./errors"
+version = "1.7.2"
+
+[dependencies.leo-package]
+path = "./kari/package"
+version = "1.7.2"
+
+[dependencies.leo-parser]
+path = "./compiler/parser"
+version = "1.7.2"
+
+[dependencies.leo-span]
+path = "./compiler/span"
+version = "1.7.2"
+
+[dependencies.backtrace]
+version = "0.3.67"
+
+[dependencies.clap]
+version = "4.3"
+features = [ "derive", "env", "color", "unstable-styles" ]
+
+[dependencies.color-backtrace]
+version = "0.5.1"
+
+[dependencies.colored]
+version = "2.0"
+
+[dependencies.console]
+version = "0.15.7"
+
+[dependencies.dirs]
+version = "5.0.0"
+
+[dependencies.indexmap]
+version = "1.9"
+features = [ "serde" ]
+
+[dependencies.lazy_static]
+version = "1.4.0"
+
+[dependencies.rand]
+version = "0.8"
+
+[dependencies.rand_core]
+version = "0.6.4"
+
+[dependencies.reqwest]
+version = "0.11.18"
+features = [ "blocking", "json", "multipart" ]
+
+[dependencies.self_update]
+version = "0.36.0"
+features = [ "archive-zip" ]
+
+[dependencies.serde]
+version = "1.0"
+features = [ "derive" ]
+
+[dependencies.serde_json]
+version = "1.0"
+
+[dependencies.snarkvm]
+workspace = true
+features = [ "circuit", "console" ]
+
+[dependencies.sys-info]
+version = "0.9.1"
+
+[dependencies.toml]
+version = "0.7"
+
+[dependencies.tracing]
+version = "0.1"
+
+[dependencies.tracing-subscriber]
+version = "0.3.17"
+features = [ "fmt" ]
+
+[dependencies.zip]
+version = "^0.6"
+
+[target."cfg(windows)".dependencies.ansi_term]
+version = "0.12.1"
+
+[dev-dependencies.assert_cmd]
+version = "2.0.11"
+
+[dev-dependencies.rusty-hook]
+version = "0.11.2"
+
+[build-dependencies.walkdir]
+version = "2"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+incremental = true
+
+[profile.bench]
+opt-level = 3
+debug = false
+rpath = false
+lto = "thin"
+incremental = true
+debug-assertions = false
+
+[profile.dev]
+opt-level = 2
+lto = "thin"
+incremental = true
+
+path = "./compiler/span"
+version = "1.7.2"
+
+[dependencies.backtrace]
+version = "0.3.67"
+
+[dependencies.clap]
+version = "4.3"
+features = [ "derive", "env", "color", "unstable-styles" ]
+
+[dependencies.color-backtrace]
+version = "0.5.1"
+
+[dependencies.colored]
+version = "2.0"
+
+[dependencies.console]
+version = "0.15.7"
+
+[dependencies.dirs]
+version = "5.0.0"
+
+[dependencies.indexmap]
+version = "1.9"
+features = [ "serde" ]
+
+[dependencies.lazy_static]
+version = "1.4.0"
+
+[dependencies.rand]
+version = "0.8"
+
+[dependencies.rand_core]
+version = "0.6.4"
+
+[dependencies.reqwest]
+version = "0.11.18"
+features = [ "blocking", "json", "multipart" ]
+
+[dependencies.self_update]
+version = "0.36.0"
+features = [ "archive-zip" ]
+
+[dependencies.serde]
+version = "1.0"
+features = [ "derive" ]
+
+[dependencies.serde_json]
+version = "1.0"
+
+[dependencies.snarkvm]
+workspace = true
+features = [ "circuit", "console" ]
+
+[dependencies.sys-info]
+version = "0.9.1"
+
+[dependencies.toml]
+version = "0.7"
+
+[dependencies.tracing]
+version = "0.1"
+
+[dependencies.tracing-subscriber]
+version = "0.3.17"
+features = [ "fmt" ]
+
+[dependencies.zip]
+version = "^0.6"
+
+[target."cfg(windows)".dependencies.ansi_term]
+version = "0.12.1"
+
+[dev-dependencies.assert_cmd]
+version = "2.0.11"
+
+[dev-dependencies.rusty-hook]
+version = "0.11.2"
+
+[build-dependencies.walkdir]
+version = "2"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+incremental = true
+
+[profile.bench]
+opt-level = 3
+debug = false
+rpath = false
+lto = "thin"
+incremental = true
+debug-assertions = false
+
+[profile.dev]
+opt-level = 2
+lto = "thin"
+incremental = true
